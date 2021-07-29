@@ -93,17 +93,11 @@ body {
     padding: 3rem 0;
     text-align: center;
   }
-  .__left-container p:nth-child(1) {
-    font-size: 2rem;
-  }
 }
 
 @media (min-width: 992px) {
   .__left-container {
     text-align: left;
-  }
-  .__left-container p:nth-child(1) {
-    font-size: 3rem;
   }
 }
 
@@ -112,9 +106,24 @@ body {
 }
 
 .__left-container p:nth-child(1) {
-  font-size: 3rem;
-  line-height: 200%;
+  line-height: 120%;
   font-weight: 600;
+}
+
+@media (min-width: 375px) {
+  .__left-container p:nth-child(1) {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .__left-container p:nth-child(1) {
+    font-size: 3rem;
+  }
+}
+
+.__left-container p:nth-child(2) {
+  margin-top: 2.3rem;
 }
 
 .__right-container .banner {

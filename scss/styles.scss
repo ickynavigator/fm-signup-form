@@ -108,25 +108,27 @@ body {
   @include xs {
     padding: 3rem 0;
     text-align: center;
-    p:nth-child(1) {
-      font-size: 2rem;
-    }
   }
   @include md {
     text-align: left;
-    p:nth-child(1) {
-      font-size: 3rem;
-    }
   }
+
   p {
     margin: 1rem;
   }
   p:nth-child(1) {
-    font-size: 3rem;
-    line-height: 200%;
+    line-height: 120%;
     font-weight: 600;
+    @include xs {
+      font-size: 2rem;
+    }
+    @include md {
+      font-size: 3rem;
+    }
   }
-  // p:nth-child(2){}
+  p:nth-child(2) {
+    margin-top: 2.3rem;
+  }
 }
 
 .__right-container {
