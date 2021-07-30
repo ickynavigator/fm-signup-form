@@ -25,7 +25,8 @@
   }
 */
 
-/** 1. Mixins */
+/** ================================================================
+    1. Mixins */
 $screen-xs-max: 375px;
 $screen-sm-max: 768px;
 $screen-md-max: 992px;
@@ -51,20 +52,29 @@ $screen-lg-max: 1200px;
   }
 }
 
-/** 2. Variables
+/** ================================================================
+    2. Variables
       2.1 Colors */
 $fm-Red: hsl(0, 100%, 74%);
 $fm-Green: hsl(154, 59%, 51%);
 $fm-Blue: hsl(248, 32%, 49%);
 $fm-DarkBlue: hsl(249, 10%, 26%);
 $fm-GrayishBlue: hsl(246, 25%, 77%);
-/**   2.2 Images */
+/**   
+      2.2 Images */
 $bg-mobile: url("../../images/bg-intro-mobile.png");
 $bg-desktop: url("../../images/bg-intro-desktop.png");
-/**   2.3 Shadow */
+/**   
+      2.3 Shadow */
 $box-shade: 0 0.5rem hsla(0, 0%, 50%, 0.4);
 
-/** 3. Html/Body Reset */
+/** ================================================================
+    3. Html/Body Reset */
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+/** ================================================================ */
 html,
 body {
   margin: 0;
@@ -77,7 +87,6 @@ body {
   background: $fm-Red;
   display: grid;
   align-items: center;
-  font-family: "Poppins", sans-serif;
   @include xs {
     background-image: $bg-mobile;
   }
@@ -154,17 +163,41 @@ body {
     grid-template-rows: auto;
     gap: 1rem 0;
     box-shadow: $box-shade;
+
+    [type="button"] {
+      text-transform: uppercase;
+      border: none;
+      border-radius: 0.5rem;
+      background: $fm-Green;
+      box-shadow: 0 0.25rem adjust-color($color: $fm-Green, $lightness: -10%);
+      color: white;
+      padding: 1rem 2rem;
+      font-weight: 500;
+      font-kerning: auto;
+      font-size: medium;
+    }
+
+    .legal-text {
+    }
   }
 }
 
 .form-control {
-  padding: 1rem;
-  border: 0.1rem solid hsl(0, 0%, 50%);
+  border: 0.12rem solid;
+  border-color: hsl(0, 0%, 80%);
   border-radius: 0.35rem;
 
   &:focus {
     outline: none !important;
-    border: 0.1rem solid $fm-Blue;
+    border-color: $fm-Blue;
+  }
+
+  &[type="text"],
+  &[type="password"],
+  &[type="email"] {
+    padding: 1rem 2rem;
+    font-weight: 600;
+    letter-spacing: 0.019rem;
   }
 }
 
