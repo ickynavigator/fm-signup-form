@@ -141,13 +141,20 @@ body {
 }
 
 .__right-container {
+  @include xs {
+    margin-bottom: 5rem;
+  }
+  @include md {
+    margin-bottom: 0;
+  }
+
   .banner {
     background: $fm-Blue;
     color: white;
     border-radius: 0.5rem;
     text-align: center;
     margin-bottom: 1rem;
-    padding: 1rem 0;
+    padding: 1rem 3rem;
     box-shadow: $box-shade;
 
     span {
@@ -178,6 +185,20 @@ body {
     }
 
     .legal-text {
+      margin: 0;
+      text-align: center;
+      font-weight: 500;
+      font-size: 0.75rem;
+      color: $fm-GrayishBlue;
+      a {
+        text-decoration: none;
+        color: $fm-Red;
+        font-weight: 700;
+        transition: ease-in-out;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

@@ -24,12 +24,22 @@
     a{}
   }
 */
-/** 1. Mixins */
-/** 2. Variables
+/** ================================================================
+    1. Mixins */
+/** ================================================================
+    2. Variables
       2.1 Colors */
-/**   2.2 Images */
-/**   2.3 Shadow */
-/** 3. Html/Body Reset */
+/**   
+      2.2 Images */
+/**   
+      2.3 Shadow */
+/** ================================================================
+    3. Html/Body Reset */
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+/** ================================================================ */
 html,
 body {
   margin: 0;
@@ -45,7 +55,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Poppins", sans-serif;
 }
 
 @media (min-width: 375px) {
@@ -126,13 +135,25 @@ body {
   margin-top: 2.3rem;
 }
 
+@media (min-width: 375px) {
+  .__right-container {
+    margin-bottom: 5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .__right-container {
+    margin-bottom: 0;
+  }
+}
+
 .__right-container .banner {
   background: #6055a5;
   color: white;
   border-radius: 0.5rem;
   text-align: center;
   margin-bottom: 1rem;
-  padding: 1rem 0;
+  padding: 1rem 3rem;
   -webkit-box-shadow: 0 0.5rem rgba(128, 128, 128, 0.4);
           box-shadow: 0 0.5rem rgba(128, 128, 128, 0.4);
 }
@@ -154,15 +175,56 @@ body {
           box-shadow: 0 0.5rem rgba(128, 128, 128, 0.4);
 }
 
+.__right-container form [type="button"] {
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0.5rem;
+  background: #38cc8c;
+  -webkit-box-shadow: 0 0.25rem #2ba671;
+          box-shadow: 0 0.25rem #2ba671;
+  color: white;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  -webkit-font-kerning: auto;
+          font-kerning: auto;
+  font-size: medium;
+}
+
+.__right-container form .legal-text {
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: #b9b6d3;
+}
+
+.__right-container form .legal-text a {
+  text-decoration: none;
+  color: #ff7a7a;
+  font-weight: 700;
+  -webkit-transition: ease-in-out;
+  transition: ease-in-out;
+}
+
+.__right-container form .legal-text a:hover {
+  text-decoration: underline;
+}
+
 .form-control {
-  padding: 1rem;
-  border: 0.1rem solid gray;
+  border: 0.12rem solid;
+  border-color: #cccccc;
   border-radius: 0.35rem;
 }
 
 .form-control:focus {
   outline: none !important;
-  border: 0.1rem solid #6055a5;
+  border-color: #6055a5;
+}
+
+.form-control[type="text"], .form-control[type="password"], .form-control[type="email"] {
+  padding: 1rem 2rem;
+  font-weight: 600;
+  letter-spacing: 0.019rem;
 }
 
 .attribution {
