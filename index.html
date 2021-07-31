@@ -31,13 +31,20 @@
         <span>Try it free 7 days</span> then $20/mo. thereafter
       </div>
 
-      <form action="index.html" method="post">
+      <form id="my-form" action="index.html" method="post">
         <input class="form-control" id="input-fn" type="text" placeholder="First Name" value="Jonathan">
-        <input class="form-control" id="input-ln" type="text" placeholder="Last Name">
-        <input class="form-control" id="input-em" type="email" placeholder="Email Address">
-        <input class="form-control" id="input-pw" type="password" placeholder="Password">
+        <span class="input-error-display" id="input-fn-err"></span>
 
-        <button type="button">Claim your free trial</button>
+        <input class="form-control" id="input-ln" type="text" placeholder="Last Name">
+        <span class="input-error-display" id="input-ln-err"></span>
+
+        <input class="form-control" id="input-em" type="email" placeholder="Email Address">
+        <span class="input-error-display" id="input-em-err"></span>
+
+        <input class="form-control" id="input-pw" type="password" placeholder="Password">
+        <span class="input-error-display" id="input-pw-err"></span>
+
+        <button type="submit">Claim your free trial</button>
 
         <p class="legal-text">
           By clicking the button, you are agreeing to our <a href="#">Terms and Services</a>

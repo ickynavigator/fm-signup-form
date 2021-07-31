@@ -3,7 +3,7 @@
  * @param {string} type
  * @param {string} value
  */
-const Myvalidate = (title, type, value) => {
+const myValidate = (title, type, value) => {
   let returnStatement = ``;
 
   const re =
@@ -14,7 +14,7 @@ const Myvalidate = (title, type, value) => {
       if (value.length < 1) returnStatement = `${title} cannot be empty`;
       break;
     case "email":
-      if (re.test(value)) returnStatement = `Looks like this is not an email`;
+      if (!re.test(value)) returnStatement = `Looks like this is not an email`;
       break;
     default:
       returnStatement = ``;
@@ -24,7 +24,43 @@ const Myvalidate = (title, type, value) => {
   return returnStatement.length !== 0 ? returnStatement : "valid";
 };
 
-document.querySelector("#input-fn").addEventListener("input", (e) => {
-  const err = Myvalidate("First Name", "empty", e.target.value);
-  console.log(err);
+const printError = (title, error, element) => {
+  if (error !== "valid") {
+    element.classList.add("form-control-error");
+    document.querySelector(`#${title}-err`).innerText = error;
+  } else {
+    element.classList.remove("form-control-error");
+    document.querySelector(`#${title}-err`).innerText = "";
+  }
+};
+
+const validateChecker = (e, title, type) => {
+  const el = e.target;
+  const err = myValidate(title, type, el.value);
+  printError(el.id, err, el);
+  return err === "valid" ? true : false;
+};
+
+const btnDisabler = () => {};
+
+var fnValid = false;
+var lnValid = false;
+var emValid = false;
+var pwValid = false;
+
+document.querySelector(`#input-fn`).addEventListener("input", (e) => {
+  fnValid = validateChecker(e, "First Name", "empty");
+});
+document.querySelector(`#input-ln`).addEventListener("input", (e) => {
+  lnValid = validateChecker(e, "Last Name", "empty");
+});
+document.querySelector(`#input-em`).addEventListener("input", (e) => {
+  emValid = validateChecker(e, "Email", "email");
+});
+document.querySelector(`#input-pw`).addEventListener("input", (e) => {
+  pwValid = validateChecker(e, "Password", "empty");
+});
+
+document.querySelector(`#my-form`).addEventListener("submit", (e) => {
+  e.preventDefault();
 });

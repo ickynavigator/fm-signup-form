@@ -189,7 +189,7 @@ body {
           box-shadow: 0 0.5rem rgba(128, 128, 128, 0.4);
 }
 
-.__right-container form [type="button"] {
+.__right-container form [type="submit"] {
   text-transform: uppercase;
   border: none;
   border-radius: 0.5rem;
