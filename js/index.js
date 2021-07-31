@@ -1,12 +1,12 @@
-/**
- * @param {string} title
- * @param {string} type
- * @param {string} value
- */
+var fnValid = false;
+var lnValid = false;
+var emValid = false;
+var pwValid = false;
+
 const myValidate = (title, type, value) => {
   let returnStatement = ``;
 
-  const re =
+  const emailRegex =
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   switch (type) {
@@ -14,7 +14,8 @@ const myValidate = (title, type, value) => {
       if (value.length < 1) returnStatement = `${title} cannot be empty`;
       break;
     case "email":
-      if (!re.test(value)) returnStatement = `Looks like this is not an email`;
+      if (!emailRegex.test(value))
+        returnStatement = `Looks like this is not an email`;
       break;
     default:
       returnStatement = ``;
@@ -41,26 +42,24 @@ const validateChecker = (e, title, type) => {
   return err === "valid" ? true : false;
 };
 
-const btnDisabler = () => {};
-
-var fnValid = false;
-var lnValid = false;
-var emValid = false;
-var pwValid = false;
+const btnDisabler = () => {
+  document.querySelector(`input[type="submit"]`).disabled =
+    !fnValid || !lnValid || !emValid || !pwValid ? true : false;
+};
 
 document.querySelector(`#input-fn`).addEventListener("input", (e) => {
   fnValid = validateChecker(e, "First Name", "empty");
+  btnDisabler();
 });
 document.querySelector(`#input-ln`).addEventListener("input", (e) => {
   lnValid = validateChecker(e, "Last Name", "empty");
+  btnDisabler();
 });
 document.querySelector(`#input-em`).addEventListener("input", (e) => {
   emValid = validateChecker(e, "Email", "email");
+  btnDisabler();
 });
 document.querySelector(`#input-pw`).addEventListener("input", (e) => {
   pwValid = validateChecker(e, "Password", "empty");
-});
-
-document.querySelector(`#my-form`).addEventListener("submit", (e) => {
-  e.preventDefault();
+  btnDisabler();
 });

@@ -204,6 +204,12 @@ body {
   font-size: medium;
 }
 
+.__right-container form [type="submit"]:disabled {
+  background: #38cc8c;
+  -webkit-box-shadow: 0 0.25rem #2ba671;
+          box-shadow: 0 0.25rem #2ba671;
+}
+
 .__right-container form .legal-text {
   margin: 0;
   text-align: center;

@@ -199,6 +199,11 @@ body {
       font-weight: 500;
       font-kerning: auto;
       font-size: medium;
+
+      &:disabled {
+        background: $fm-Green;
+        box-shadow: 0 0.25rem adjust-color($color: $fm-Green, $lightness: -10%);
+      }
     }
 
     .legal-text {
