@@ -97,20 +97,35 @@ body {
 
 .wrapper {
   display: grid;
+  align-content: center;
   @include xs {
     grid-template-columns: 1fr;
     margin: 1.5rem;
+    grid-template-areas:
+      "left"
+      "right"
+      "footer";
   }
   @include md {
     grid-template-columns: 1fr 1fr;
     margin: 9.5rem;
+    grid-template-areas:
+      "left right"
+      "footer footer";
   }
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr 0.5fr;
+
+  footer {
+    grid-area: footer;
+    margin: 0;
+  }
 }
 
 // .__container {}
 
 .__left-container {
+  grid-area: left;
+
   color: white;
   margin: auto;
 
@@ -141,6 +156,8 @@ body {
 }
 
 .__right-container {
+  grid-area: right;
+
   @include xs {
     margin-bottom: 5rem;
   }
