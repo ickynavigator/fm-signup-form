@@ -25,9 +25,11 @@ const printError = (title, error, element) => {
   if (error !== "valid") {
     element.classList.add("form-control-error");
     document.querySelector(`#${title}-err`).innerText = error;
+    document.querySelector(`#${title}-err-img`).style.visibility = "visible";
   } else {
     element.classList.remove("form-control-error");
     document.querySelector(`#${title}-err`).innerText = "";
+    document.querySelector(`#${title}-err-img`).style.visibility = "hidden";
   }
 };
 

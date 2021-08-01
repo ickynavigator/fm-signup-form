@@ -34,22 +34,25 @@
       <form id="my-form" action="index.html" method="post" onsubmit="(e)=>{e.preventDefault()}">
         <div class="input-group">
           <input class="form-control" id="input-fn" type="text" placeholder="First Name" value="Jonathan">
-          <!-- <img src="./images/icon-error.svg" aria-hidden="true" alt="Error icon" /> -->
+          <img src="./images/icon-error.svg" id="input-fn-err-img" aria-hidden="true" alt="Error icon" />
           <span class="input-error-display" id="input-fn-err"></span>
         </div>
 
         <div class="input-group">
           <input class="form-control" id="input-ln" type="text" placeholder="Last Name">
+          <img src="./images/icon-error.svg" id="input-ln-err-img" aria-hidden="true" alt="Error icon" />
           <span class="input-error-display" id="input-ln-err"></span>
         </div>
 
         <div class="input-group">
           <input class="form-control" id="input-em" type="email" placeholder="Email Address">
+          <img src="./images/icon-error.svg" id="input-em-err-img" aria-hidden="true" alt="Error icon" />
           <span class="input-error-display" id="input-em-err"></span>
         </div>
 
         <div class="input-group">
           <input class="form-control" id="input-pw" type="password" placeholder="Password">
+          <img src="./images/icon-error.svg" id="input-pw-err-img" aria-hidden="true" alt="Error icon" />
           <span class="input-error-display" id="input-pw-err"></span>
         </div>
 
