@@ -66,8 +66,7 @@ $bg-mobile: url("../../images/bg-intro-mobile.png");
 $bg-desktop: url("../../images/bg-intro-desktop.png");
 /**   
       2.3 Shadow */
-$box-shade: 0 0.5rem hsla(0, 0%, 50%, 0.4);
-
+$box-shade: 0 0.4rem hsla(0, 0%, 50%, 0.3);
 /** ================================================================
     3. Html/Body Reset */
 * {
@@ -101,6 +100,7 @@ body {
   @include xs {
     grid-template-columns: 1fr;
     margin: 1.5rem;
+    // margin: auto;
     grid-template-areas:
       "left"
       "right"
@@ -109,11 +109,12 @@ body {
   @include md {
     grid-template-columns: 1fr 1fr;
     margin: 9.5rem;
+    // margin: auto;
     grid-template-areas:
       "left right"
       "footer footer";
   }
-  grid-template-rows: 1fr 0.5fr;
+  gap: 0 1rem;
 
   footer {
     grid-area: footer;
@@ -121,37 +122,38 @@ body {
   }
 }
 
-// .__container {}
-
 .__left-container {
   grid-area: left;
 
   color: white;
-  margin: auto;
 
   @include xs {
-    padding: 3rem 0;
+    padding: 1rem 0;
+    margin: 1rem;
     text-align: center;
   }
   @include md {
+    margin: auto;
     text-align: left;
   }
 
   p {
-    margin: 1rem;
-  }
-  p:nth-child(1) {
-    line-height: 120%;
-    font-weight: 600;
-    @include xs {
-      font-size: 2rem;
+    &:nth-child(1) {
+      line-height: 120%;
+      font-weight: 600;
+      @include xs {
+        margin: 0 2.5rem;
+        font-size: 2rem;
+      }
+      @include md {
+        margin: 0;
+        font-size: 3rem;
+      }
     }
-    @include md {
-      font-size: 3rem;
+
+    &:nth-child(2) {
+      margin-top: 2.3rem;
     }
-  }
-  p:nth-child(2) {
-    margin-top: 2.3rem;
   }
 }
 
@@ -159,7 +161,7 @@ body {
   grid-area: right;
 
   @include xs {
-    margin-bottom: 5rem;
+    margin-bottom: 0.5rem;
   }
   @include md {
     margin-bottom: 0;
@@ -200,9 +202,15 @@ body {
       font-kerning: auto;
       font-size: medium;
 
+      transition: ease-in-out;
+      cursor: pointer;
+
       &:disabled {
-        background: $fm-Green;
-        box-shadow: 0 0.25rem adjust-color($color: $fm-Green, $lightness: -10%);
+        cursor: not-allowed;
+      }
+      &:hover:not(:disabled) {
+        background: adjust-color($color: $fm-Green, $lightness: 15%);
+        box-shadow: 0 0.25rem $fm-Green;
       }
     }
 
@@ -235,7 +243,8 @@ body {
 
   &:focus {
     outline: none !important;
-    border-color: $fm-Blue;
+    // border-color: $fm-Blue;
+    border-color: $fm-DarkBlue;
   }
 
   &[type="text"],

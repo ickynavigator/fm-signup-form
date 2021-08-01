@@ -16,7 +16,7 @@
 
 <body>
   <div class="wrapper">
-    <div class="__container __left-container">
+    <div class="__left-container">
       <p>
         Learn to code by watching others
       </p>
@@ -26,12 +26,12 @@
       </p>
     </div>
 
-    <div class="__container __right-container">
+    <div class="__right-container">
       <div class="banner">
         <span>Try it free 7 days</span> then $20/mo. thereafter
       </div>
 
-      <form id="my-form" action="index.html" method="post" onsubmit="(e)=>{e.preventDefault()}">
+      <form id="my-form" method="post">
         <div class="input-group">
           <input class="form-control" id="input-fn" type="text" placeholder="First Name" value="Jonathan">
           <img src="./images/icon-error.svg" id="input-fn-err-img" aria-hidden="true" alt="Error icon" />
@@ -56,7 +56,7 @@
           <span class="input-error-display" id="input-pw-err"></span>
         </div>
 
-        <input type="submit" value="Claim your free trial" disabled>
+        <input type="submit" value="Claim your free trial">
 
         <p class="legal-text">
           By clicking the button, you are agreeing to our <a href="#">Terms and Services</a>
@@ -64,10 +64,14 @@
       </form>
     </div>
 
-    <!-- <footer>
-      <p class="attribution">Challenge by<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          rel="noopener">Frontend Mentor</a>. Coded by<a href="#">Your Name Here</a>.</p>
-    </footer> -->
+    <footer>
+      <div class="attribution" aria-hidden="true">
+        Challenge by
+        <a rel="noreferrer" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by
+        <a rel="noreferrer" href="https://github.com/ickynavigator" target="_blank">Obi Fortune</a>.
+      </div>
+    </footer>
   </div>
   <script src="./js/index.js"></script>
 

@@ -74,8 +74,7 @@ body {
   display: grid;
   -ms-flex-line-pack: center;
       align-content: center;
-  -ms-grid-rows: 1fr 0.5fr;
-      grid-template-rows: 1fr 0.5fr;
+  gap: 0 1rem;
 }
 
 @media (min-width: 375px) {
@@ -104,24 +103,21 @@ body {
 .__left-container {
   grid-area: left;
   color: white;
-  margin: auto;
 }
 
 @media (min-width: 375px) {
   .__left-container {
-    padding: 3rem 0;
+    padding: 1rem 0;
+    margin: 1rem;
     text-align: center;
   }
 }
 
 @media (min-width: 992px) {
   .__left-container {
+    margin: auto;
     text-align: left;
   }
-}
-
-.__left-container p {
-  margin: 1rem;
 }
 
 .__left-container p:nth-child(1) {
@@ -131,12 +127,14 @@ body {
 
 @media (min-width: 375px) {
   .__left-container p:nth-child(1) {
+    margin: 0 2.5rem;
     font-size: 2rem;
   }
 }
 
 @media (min-width: 992px) {
   .__left-container p:nth-child(1) {
+    margin: 0;
     font-size: 3rem;
   }
 }
@@ -151,7 +149,7 @@ body {
 
 @media (min-width: 375px) {
   .__right-container {
-    margin-bottom: 5rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -168,8 +166,8 @@ body {
   text-align: center;
   margin-bottom: 1rem;
   padding: 1rem 3rem;
-  -webkit-box-shadow: 0 0.5rem rgba(128, 128, 128, 0.4);
-          box-shadow: 0 0.5rem rgba(128, 128, 128, 0.4);
+  -webkit-box-shadow: 0 0.4rem rgba(128, 128, 128, 0.3);
+          box-shadow: 0 0.4rem rgba(128, 128, 128, 0.3);
 }
 
 .__right-container .banner span {
@@ -185,8 +183,8 @@ body {
   -ms-grid-rows: auto;
       grid-template-rows: auto;
   gap: 1rem 0;
-  -webkit-box-shadow: 0 0.5rem rgba(128, 128, 128, 0.4);
-          box-shadow: 0 0.5rem rgba(128, 128, 128, 0.4);
+  -webkit-box-shadow: 0 0.4rem rgba(128, 128, 128, 0.3);
+          box-shadow: 0 0.4rem rgba(128, 128, 128, 0.3);
 }
 
 .__right-container form [type="submit"] {
@@ -202,12 +200,19 @@ body {
   -webkit-font-kerning: auto;
           font-kerning: auto;
   font-size: medium;
+  -webkit-transition: ease-in-out;
+  transition: ease-in-out;
+  cursor: pointer;
 }
 
 .__right-container form [type="submit"]:disabled {
-  background: #38cc8c;
-  -webkit-box-shadow: 0 0.25rem #2ba671;
-          box-shadow: 0 0.25rem #2ba671;
+  cursor: not-allowed;
+}
+
+.__right-container form [type="submit"]:hover:not(:disabled) {
+  background: #75dbaf;
+  -webkit-box-shadow: 0 0.25rem #38cc8c;
+          box-shadow: 0 0.25rem #38cc8c;
 }
 
 .__right-container form .legal-text {
@@ -241,7 +246,7 @@ body {
 
 .form-control:focus {
   outline: none !important;
-  border-color: #6055a5;
+  border-color: #3e3c49;
 }
 
 .form-control[type="text"], .form-control[type="password"], .form-control[type="email"] {

@@ -1,9 +1,9 @@
 var [fnValid, lnValid, emValid, pwValid] = [false, false, false, false];
-const emailRegex =
-  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const myValidate = (title, type, value) => {
   let returnStatement = ``;
+  const emailRegex =
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   switch (type) {
     case "empty":
@@ -34,7 +34,7 @@ const printError = (title, error, element) => {
 };
 
 const validateChecker = (e, title, type) => {
-  const el = e.target;
+  const el = e;
   const err = myValidate(title, type, el.value);
   printError(el.id, err, el);
   return err === "valid" ? true : false;
@@ -46,18 +46,45 @@ const btnDisabler = () => {
 };
 
 document.querySelector(`#input-fn`).addEventListener("input", (e) => {
-  fnValid = validateChecker(e, "First Name", "empty");
+  fnValid = validateChecker(e.target, "First Name", "empty");
   btnDisabler();
 });
 document.querySelector(`#input-ln`).addEventListener("input", (e) => {
-  lnValid = validateChecker(e, "Last Name", "empty");
+  lnValid = validateChecker(e.target, "Last Name", "empty");
   btnDisabler();
 });
 document.querySelector(`#input-em`).addEventListener("input", (e) => {
-  emValid = validateChecker(e, "Email", "email");
+  emValid = validateChecker(e.target, "Email", "email");
   btnDisabler();
 });
 document.querySelector(`#input-pw`).addEventListener("input", (e) => {
-  pwValid = validateChecker(e, "Password", "empty");
+  pwValid = validateChecker(e.target, "Password", "empty");
+  btnDisabler();
+});
+
+document.querySelector(`#my-form`).addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  fnValid = validateChecker(
+    document.querySelector(`#input-fn`),
+    "First Name",
+    "empty"
+  );
+  lnValid = validateChecker(
+    document.querySelector(`#input-ln`),
+    "Last Name",
+    "empty"
+  );
+  emValid = validateChecker(
+    document.querySelector(`#input-em`),
+    "Email",
+    "email"
+  );
+  pwValid = validateChecker(
+    document.querySelector(`#input-pw`),
+    "Password",
+    "empty"
+  );
+
   btnDisabler();
 });
