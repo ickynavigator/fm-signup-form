@@ -32,17 +32,26 @@
       </div>
 
       <form id="my-form" action="index.html" method="post" onsubmit="(e)=>{e.preventDefault()}">
-        <input class="form-control" id="input-fn" type="text" placeholder="First Name" value="Jonathan">
-        <span class="input-error-display" id="input-fn-err"></span>
+        <div class="input-group">
+          <input class="form-control" id="input-fn" type="text" placeholder="First Name" value="Jonathan">
+          <!-- <img src="./images/icon-error.svg" aria-hidden="true" alt="Error icon" /> -->
+          <span class="input-error-display" id="input-fn-err"></span>
+        </div>
 
-        <input class="form-control" id="input-ln" type="text" placeholder="Last Name">
-        <span class="input-error-display" id="input-ln-err"></span>
+        <div class="input-group">
+          <input class="form-control" id="input-ln" type="text" placeholder="Last Name">
+          <span class="input-error-display" id="input-ln-err"></span>
+        </div>
 
-        <input class="form-control" id="input-em" type="email" placeholder="Email Address">
-        <span class="input-error-display" id="input-em-err"></span>
+        <div class="input-group">
+          <input class="form-control" id="input-em" type="email" placeholder="Email Address">
+          <span class="input-error-display" id="input-em-err"></span>
+        </div>
 
-        <input class="form-control" id="input-pw" type="password" placeholder="Password">
-        <span class="input-error-display" id="input-pw-err"></span>
+        <div class="input-group">
+          <input class="form-control" id="input-pw" type="password" placeholder="Password">
+          <span class="input-error-display" id="input-pw-err"></span>
+        </div>
 
         <input type="submit" value="Claim your free trial" disabled>
 

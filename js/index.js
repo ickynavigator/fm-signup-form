@@ -1,13 +1,9 @@
-var fnValid = false;
-var lnValid = false;
-var emValid = false;
-var pwValid = false;
+var [fnValid, lnValid, emValid, pwValid] = [false, false, false, false];
+const emailRegex =
+  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const myValidate = (title, type, value) => {
   let returnStatement = ``;
-
-  const emailRegex =
-    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   switch (type) {
     case "empty":

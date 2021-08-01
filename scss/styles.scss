@@ -185,7 +185,7 @@ body {
     background: white;
     display: grid;
     grid-template-rows: auto;
-    gap: 1rem 0;
+    gap: 0.5rem 0;
     box-shadow: $box-shade;
 
     [type="submit"] {
@@ -230,6 +230,8 @@ body {
   border-color: hsl(0, 0%, 80%);
   border-radius: 0.35rem;
 
+  width: 100%;
+
   &:focus {
     outline: none !important;
     border-color: $fm-Blue;
@@ -242,9 +244,24 @@ body {
     font-weight: 600;
     letter-spacing: 0.019rem;
   }
+
+  &-error {
+    border: 0.15rem solid;
+    border-color: $fm-Red !important;
+  }
 }
 
-// .input-group{}
+.input-error-display {
+  font-size: smaller;
+  font-weight: 500;
+  font-style: italic;
+  color: $fm-Red;
+  text-align: right;
+}
+
+.input-group {
+  width: 100%;
+}
 
 .attribution {
   font-size: 11px;

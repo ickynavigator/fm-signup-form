@@ -184,7 +184,7 @@ body {
   display: grid;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-  gap: 1rem 0;
+  gap: 0.5rem 0;
   -webkit-box-shadow: 0 0.5rem rgba(128, 128, 128, 0.4);
           box-shadow: 0 0.5rem rgba(128, 128, 128, 0.4);
 }
@@ -234,6 +234,7 @@ body {
   border: 0.12rem solid;
   border-color: #cccccc;
   border-radius: 0.35rem;
+  width: 100%;
 }
 
 .form-control:focus {
@@ -245,6 +246,23 @@ body {
   padding: 1rem 2rem;
   font-weight: 600;
   letter-spacing: 0.019rem;
+}
+
+.form-control-error {
+  border: 0.15rem solid;
+  border-color: #ff7a7a !important;
+}
+
+.input-error-display {
+  font-size: smaller;
+  font-weight: 500;
+  font-style: italic;
+  color: #ff7a7a;
+  text-align: right;
+}
+
+.input-group {
+  width: 100%;
 }
 
 .attribution {
