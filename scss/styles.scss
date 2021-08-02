@@ -32,9 +32,10 @@ $screen-sm-max: 768px;
 $screen-md-max: 992px;
 $screen-lg-max: 1200px;
 @mixin xs {
-  @media (min-width: #{$screen-xs-max}) {
-    @content;
-  }
+  // @media (min-width: #{$screen-xs-max}) {
+  //   @content;
+  // }
+  @content;
 }
 @mixin sm {
   @media (min-width: #{$screen-sm-max}) {
